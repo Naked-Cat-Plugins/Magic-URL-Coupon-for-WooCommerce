@@ -111,6 +111,9 @@ You can report any security bugs found in the source code of this plugin through
 
 = 2.2 - 2026-04-08 =
 * [NEW] Free plugin ownership transferred from [Marco Almeida | Webdados](https://profiles.wordpress.org/webdados/) to [Naked Cat Plugins](https://profiles.wordpress.org/nakedcatplugins/) on WordPress.org - No worries, we’re the same people :-)
+* [TWEAK] Plugin descriptions
+* [FIX] Double discount when using PayPal Payments (thanks [https://profiles.wordpress.org/alordiel/](@alordiel))
+* [DEV] Improve WordPress Coding Standards
 * [DEV] Remove `load_plugin_textdomain` call as it’s no longer needed
 * [DEV] Move development to GitHub
 * [DEV] Tested up to WordPress 7.0-RC2-62197 and WooCommerce 10.7.0-beta.1

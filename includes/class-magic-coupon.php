@@ -344,18 +344,18 @@ class Magic_Coupon {
 				}
 				// Product - Check variation is allowed
 				if ( count( $coupon->get_product_ids() ) > 0 ) {
-					if ( ! in_array( intval( $variation_id ), $coupon->get_product_ids() ) ) { // no third true argument because get_product_ids probably returns strings - to check
+					if ( ! in_array( intval( $variation_id ), $coupon->get_product_ids(), true ) ) { // no third true argument because get_product_ids probably returns strings - to check
 						// Check product
-						if ( ! in_array( intval( $product_id ), $coupon->get_product_ids() ) ) { // no third true argument because get_product_ids probably returns strings - to check
+						if ( ! in_array( intval( $product_id ), $coupon->get_product_ids(), true ) ) { // no third true argument because get_product_ids probably returns strings - to check
 							return false;
 						}
 					}
 				}
 				// Excluded product - Check if variation is excluded
 				if ( count( $coupon->get_excluded_product_ids() ) > 0 ) {
-					if ( in_array( intval( $variation_id ), $coupon->get_excluded_product_ids() ) ) { // no third true argument because get_excluded_product_ids probably returns strings - to check
+					if ( in_array( intval( $variation_id ), $coupon->get_excluded_product_ids(), true ) ) { // no third true argument because get_excluded_product_ids probably returns strings - to check
 						return false;
-					} elseif ( in_array( intval( $product_id ), $coupon->get_excluded_product_ids() ) ) { // no third true argument because get_excluded_product_ids probably returns strings - to check
+					} elseif ( in_array( intval( $product_id ), $coupon->get_excluded_product_ids(), true ) ) { // no third true argument because get_excluded_product_ids probably returns strings - to check
 							return false;
 					}
 				}
@@ -375,13 +375,13 @@ class Magic_Coupon {
 				}
 				// Product - Check product is allowed
 				if ( count( $coupon->get_product_ids() ) > 0 ) {
-					if ( ! in_array( intval( $product_id ), $coupon->get_product_ids() ) ) { // no third true argument because get_product_ids probably returns strings - to check
+					if ( ! in_array( intval( $product_id ), $coupon->get_product_ids(), true ) ) { // no third true argument because get_product_ids probably returns strings - to check
 						return false;
 					}
 				}
 				// Excluded product - Check if product is excluded
 				if ( count( $coupon->get_excluded_product_ids() ) > 0 ) {
-					if ( in_array( intval( $product_id ), $coupon->get_excluded_product_ids() ) ) { // no third true argument because get_excluded_product_ids probably returns strings - to checkly returns strings - to check
+					if ( in_array( intval( $product_id ), $coupon->get_excluded_product_ids(), true ) ) { // no third true argument because get_excluded_product_ids probably returns strings - to checkly returns strings - to check
 						return false;
 					}
 				}
@@ -408,6 +408,11 @@ class Magic_Coupon {
 			||
 			// No discount on WP Admin
 			( is_admin() && ! wp_doing_ajax() )
+			||
+			// Fix for PayPal Payments double discount - https://wordpress.org/support/topic/double-discount-when-using-paypal-payments-fix-suggestion/
+			( defined( 'REST_REQUEST' ) && REST_REQUEST )
+			||
+			( defined( 'DOING_AJAX' ) && DOING_AJAX && isset( $_REQUEST['wc-ajax'] ) && strpos( sanitize_text_field( wp_unslash( $_REQUEST['wc-ajax'] ) ), 'ppc' ) !== false ) // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			// Should we allow discounts anywhere else?
 		) {
 			return false;
@@ -493,7 +498,7 @@ class Magic_Coupon {
 	 * @param bool       $for_display  Whether the prices are for display purposes.
 	 * @return array     Modified prices array with discounts applied.
 	 */
-	public function variation_prices( $prices, $product, $for_display ) {
+	public function variation_prices( $prices, $product, $for_display ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
 		if ( $this->is_valid_location() ) {
 			if ( is_array( $prices ) && isset( $prices['price'] ) && is_array( $prices['price'] ) ) {
 				foreach ( $prices['price'] as $variation_id => $price ) {
@@ -542,7 +547,7 @@ class Magic_Coupon {
 	 * @param string $type      The type of pricing rule.
 	 * @return array Modified pricing rules with discounts applied.
 	 */
-	public function tier_pricing_table_price_product_price_rules( $rules, $product_id, $type ) {
+	public function tier_pricing_table_price_product_price_rules( $rules, $product_id, $type ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
 		if ( $this->is_valid_location() ) {
 			if ( $this->coupon_is_valid_for_product( $this->coupon, $product_id ) ) {
 				foreach ( $rules as $qty => $price ) {
@@ -601,7 +606,7 @@ class Magic_Coupon {
 	 * @param array  $cart_item_data Additional cart item data.
 	 * @return string The cart item key (unchanged).
 	 */
-	public function add_to_cart( $cart_item_key, $product_id, $quantity, $variation_id, $variation, $cart_item_data ) {
+	public function add_to_cart( $cart_item_key, $product_id, $quantity, $variation_id, $variation, $cart_item_data ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
 		if ( $this->coupon ) {
 			// For variable products, check the variation ID if available
 			$check_product_id = ( ! empty( $variation_id ) ) ? $variation_id : $product_id;
@@ -967,7 +972,7 @@ class Magic_Coupon {
 	 * @param int     $post_id The ID of the coupon being saved.
 	 * @param WP_Post $post    The post object representing the coupon.
 	 */
-	public function woocommerce_coupon_options_save( $post_id, $post ) {
+	public function woocommerce_coupon_options_save( $post_id, $post ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
 		// WooCommerce is taking care of the nonce check, so we don't need to do it here
 		// phpcs:disable WordPress.Security.NonceVerification.Missing
 		$coupon = new WC_Coupon( $post_id );
