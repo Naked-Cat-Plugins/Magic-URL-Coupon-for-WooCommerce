@@ -2,16 +2,16 @@
 /**
  * Plugin Name:          Magic URL Coupon for WooCommerce
  * Plugin URI:
- * Description:          Pass a WooCommerce coupon code via URL and display the product prices as if the coupon has been applied to them. Coupon is automatically added to the cart alongside the products.
+ * Description:          Share WooCommerce discount links: pass a coupon code via URL, display sale prices on product pages, and auto-apply the coupon at checkout.
  * Version:              2.1
  * Author:               Naked Cat Plugins (by Webdados)
  * Author URI:           https://nakedcatplugins.com
  * Text Domain:          magic-coupon
  * Requires at least:    5.8
- * Tested up to:         6.9
+ * Tested up to:         7.0
  * Requires PHP:         7.2
  * WC requires at least: 7.1
- * WC tested up to:      9.9
+ * WC tested up to:      10.7
  * Requires Plugins:     woocommerce
  **/
 

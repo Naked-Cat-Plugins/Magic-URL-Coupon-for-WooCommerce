@@ -2,35 +2,39 @@
 Contributors: nakedcatplugins, webdados
 Tags: woocommerce, coupons, promotions, marketing
 Requires at least: 5.8
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 7.2
 Stable tag: 2.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Pass a WooCommerce coupon code via URL and display the product prices as if the coupon has been applied to them. Coupon is automatically added to the cart alongside the products.
+Share WooCommerce discount links: pass a coupon code via URL, display sale prices on product pages, and auto-apply the coupon at checkout.
 
 == Description ==
 
-With this plugin, you can pass a coupon code via an URL parameter (`mcoupon` by default) and it will be stored in a cookie for a configurable amount of time.
+Want to share a WooCommerce discount link that automatically applies a coupon? Magic URL Coupon lets you embed any coupon code directly in a URL — perfect for email campaigns, affiliate links, and social media promotions.
 
-While the cookie is valid:
+When a customer visits your store via the magic link, the coupon code is stored in a cookie for a configurable amount of time. No manual code entry needed.
 
-* All the eligible products will have their display price reflect the coupon discount;
-* A personalized HTML message can be shown on the product page, under the product price (or anywhere else, if you know your way around hooks);
-* When the client adds the product to the cart, the coupon is automatically applied also;
+Pass the coupon via the `mcoupon` URL parameter (customizable via the `magic_coupon_url_parameter` filter). While the cookie is active:
 
-Please note that the coupon can still be applied manually by the user at any time. This will not lock the coupon regular usage.
+* Discounted prices shown upfront — eligible product pages display the post-coupon price automatically, so customers see exactly what they’ll pay before adding to cart;
+* Custom promotional message — show a personalized HTML message under the product price, anywhere on the page via hooks, or inline via the `[magic_coupon_html_message]` shortcode;
+* Coupon auto-applied at checkout — when the customer adds a product to the cart, the coupon is applied automatically, no code entry required;
+* The coupon remains freely usable: customers can still enter it manually at any time, and this plugin will not restrict its regular usage.
 
-The support for variable products is experimental and may be moved to a premium add-on in the future.
+Variable product support is experimental and may be moved to a premium add-on in the future.
 
 = Other (premium) plugins =
 
 Already know our other WooCommerce (premium) plugins?
 
 * [Shop as Client for WooCommerce](https://nakedcatplugins.com/product/shop-as-client-for-woocommerce-pro-add-on/) - Quickly create orders on behalf of your customers
-* [Taxonomy/Term and Role based Discounts for WooCommerce](https://nakedcatplugins.com/product/taxonomy-term-and-role-based-discounts-for-woocommerce-pro-add-on/) - Easily create bulk discount rules for products based on any taxonomy terms (built-in or custom)
+* [Simple Checkout Fields Manager for WooCommerce](https://nakedcatplugins.com/product/simple-custom-fields-for-woocommerce-blocks-checkout/) - Add custom fields and manage (remove, make required or optional) core fields on the new WooCommerce Block-based Checkout
+* [Advanced Coupon Restrictions for WooCommerce](https://nakedcatplugins.com/product/advanced-coupon-restrictions-for-woocommerce/) - Create coupons for any Product Taxonomy, User details, and Order destination.
 * [Simple WooCommerce Order Approval](https://nakedcatplugins.com/product/simple-woocommerce-order-approval/) - The hassle-free solution for WooCommerce order approval before payment
+* [Taxonomy/Term and Role based Discounts for WooCommerce](https://nakedcatplugins.com/product/taxonomy-term-and-role-based-discounts-for-woocommerce-pro-add-on/) - Easily create bulk discount rules for products based on any taxonomy terms (built-in or custom)
+* [DPD / SEUR / Geopost Pickup and Lockers network for WooCommerce](https://nakedcatplugins.com/product/dpd-seur-geopost-pickup-and-lockers-network-for-woocommerce/) - Deliver your WooCommerce orders on the DPD and SEUR Pickup network of Parcelshops and Lockers in 21 European countries
 
 == Installation ==
 
@@ -77,7 +81,7 @@ We set the following constants to prevent caching by some plugins, on the moment
 
 This will ensure the page with the discounted price is not cached on that moment (and no other users will see a version of the page with the discount), but will not disable the cache that might already exist.
 
-Anyway, we've experimented a bit with the [WP-Optimize](https://wordpress.org/plugins/wp-optimize/) “Cookies which, if present, will prevent caching” setting, by entering the name of our cookie (`mcoupon` by default), and we had good results. Regular users see the cached page and the ones with the coupon set on the cookie see non-cached pages.
+Anyway, we’ve experimented a bit with the [WP-Optimize](https://wordpress.org/plugins/wp-optimize/) “Cookies which, if present, will prevent caching” setting, by entering the name of our cookie (`mcoupon` by default), and we had good results. Regular users see the cached page and the ones with the coupon set on the cookie see non-cached pages.
 
 = Is this plugin compatible with the new WooCommerce High-Performance Order Storage? =
 
@@ -105,39 +109,45 @@ You can report any security bugs found in the source code of this plugin through
 
 == Changelog ==
 
+= 2.2 - 2026-04-08 =
+* [NEW] Free plugin ownership transferred from [Marco Almeida | Webdados](https://profiles.wordpress.org/webdados/) to [Naked Cat Plugins](https://profiles.wordpress.org/nakedcatplugins/) on WordPress.org - No worries, we’re the same people :-)
+* [DEV] Remove `load_plugin_textdomain` call as it’s no longer needed
+* [DEV] Move development to GitHub
+* [DEV] Tested up to WordPress 7.0-RC2-62197 and WooCommerce 10.7.0-beta.1
+
 = 2.1 - 2025-06-14 =
 * [NEW] We are now called Naked Cat Plugins 😻
 * [FIX] Copy coupon URL was submitting the coupon form on the backend
 * [DEV] Apply WordPress Coding Standards
 * [DEV] Requires WordPress 5.8, WooCommerce 7.1 and PHP 7.2
-* [DEV] Tested with WordPress 6.9-alpha-60301 and WooCommerce 9.9.3
+* [DEV] Tested up to WordPress 6.9-alpha-60301 and WooCommerce 9.9.3
 
 = 2.0 - 2023-12-13 =
 * Beta compatibility with Subscription Products (not variable) and the "Recurring Product Discount" and "Recurring Product % Discount" coupon types
 * Declare WooCommerce block-based Cart and Checkout compatibility
 * Requires WordPress 5.4
-* Tested with WordPress 6.5-alpha-57159 and WooCommerce 8.4.0
+* Tested up to WordPress 6.5-alpha-57159 and WooCommerce 8.4.0
 
 = 1.9 - 2023-07-07 =
 * Requires WooCommerce 5.0
-* Tested with WordPress 6.3-beta3-56143 and WooCommerce 7.9.0-rc.3
+* Tested up to WordPress 6.3-beta3-56143 and WooCommerce 7.9.0-rc.3
 
 = 1.8 - 2022-06-29 =
 * New brand: PT Woo Plugins 🥳
 * Requires WordPress 5.0, WooCommerce 3.0 and PHP 7.0
-* Tested with WordPress 6.1-alpha-53556 and WooCommerce 6.7.0-beta.2
+* Tested up to WordPress 6.1-alpha-53556 and WooCommerce 6.7.0-beta.2
 
 = 1.7 =
 * Compatibility with “Percentage Coupon per Product for WooCommerce” 0.6 (experimental, sponsored by [https://masterswiss.com/](https://masterswiss.com/))
-* Tested with WordPress 5.7-beta2-50285 and WooCommerce 5.0
+* Tested up to WordPress 5.7-beta2-50285 and WooCommerce 5.0
 
 = 1.6 =
 * New filter on the "is on sale" own function for better [Percentage Coupon per Product for WooCommerce](https://wordpress.org/plugins/product-percentage-coupon-woo/) integration (sponsored by: [Master Swiss](https://masterswiss.com/))
-* Tested with WordPress 5.6-alpha-48937 and WooCommerce 4.5.1
+* Tested up to WordPress 5.6-alpha-48937 and WooCommerce 4.5.1
 
 = 1.5 =
 * Compatibility with our upcoming plugin “Percentage Coupon per Product for WooCommerce” plugin
-* Tested with WordPress 5.5-RC1-48708 and WooCommerce 4.4.0-rc.1
+* Tested up to WordPress 5.5-RC1-48708 and WooCommerce 4.4.0-rc.1
 
 = 1.4 =
 * Show discount prices on [WooCommerce Tiered Price Table](https://wordpress.org/plugins/tier-pricing-table/) (sponsored by: [Master Swiss](https://masterswiss.com/))
@@ -176,10 +186,10 @@ You can report any security bugs found in the source code of this plugin through
 * New `[magic_coupon_html_message]` shortcode to show the HTML message on the product description if the theme is custom and does not call the `woocommerce_single_product_summary` action
 * Bugfix on the moment the coupon is checked from the cookie to avoid errors on some configurations
 * Clarification of operation in conjunction with cache plugins
-* Tested with WordPress 5.5-alpha-47748 and WooCommerce 4.1.0-rc.2
+* Tested up to WordPress 5.5-alpha-47748 and WooCommerce 4.1.0-rc.2
 
 = 1.0.2 =
-* Tested with WordPress 5.2.5-alpha and WooCommerce 3.8.0
+* Tested up to WordPress 5.2.5-alpha and WooCommerce 3.8.0
 
 = 1.0.1 =
 * Small readme.txt fixes

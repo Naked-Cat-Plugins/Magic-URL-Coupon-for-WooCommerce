@@ -49,7 +49,6 @@ class Magic_Coupon {
 	 * Init hooks
 	 */
 	public function init_hooks() {
-		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
 		add_action( 'init', array( $this, 'init_vars' ) );
 		add_action( 'init', array( $this, 'check_mcoupon' ), 11 );
 		add_action( 'woocommerce_add_to_cart', array( $this, 'add_to_cart' ), PHP_INT_MAX, 6 );
@@ -58,13 +57,6 @@ class Magic_Coupon {
 		add_action( 'woocommerce_coupon_data_panels', array( $this, 'woocommerce_coupon_data_panels' ), 10, 2 );
 		add_action( 'woocommerce_coupon_options_save', array( $this, 'woocommerce_coupon_options_save' ), 10, 2 );
 		add_action( 'wp', array( $this, 'init_html_message_action' ) );
-	}
-
-	/**
-	 * Load textdomain
-	 */
-	public function load_textdomain() {
-		load_plugin_textdomain( 'magic-coupon' );
 	}
 
 	/**
