@@ -4,7 +4,7 @@ Tags: woocommerce, coupons, promotions, marketing
 Requires at least: 5.8
 Tested up to: 7.0
 Requires PHP: 7.2
-Stable tag: 2.1
+Stable tag: 2.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -110,7 +110,7 @@ You can report any security bugs found in the source code of this plugin through
 == Changelog ==
 
 = 2.2 - 2026-04-08 =
-* [NEW] Free plugin ownership transferred from [Marco Almeida | Webdados](https://profiles.wordpress.org/webdados/) to [Naked Cat Plugins](https://profiles.wordpress.org/nakedcatplugins/) on WordPress.org - No worries, we’re the same people :-)
+* [NEW] Plugin ownership transferred from [Marco Almeida | Webdados](https://profiles.wordpress.org/webdados/) to [Naked Cat Plugins](https://profiles.wordpress.org/nakedcatplugins/) on WordPress.org - No worries, we’re the same people :-)
 * [TWEAK] Plugin descriptions
 * [FIX] Double discount when using PayPal Payments (thanks [https://profiles.wordpress.org/alordiel/](@alordiel))
 * [DEV] Improve WordPress Coding Standards
