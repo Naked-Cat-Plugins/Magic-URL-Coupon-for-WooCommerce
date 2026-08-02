@@ -978,7 +978,7 @@ class Magic_Coupon {
 		$coupon = new WC_Coupon( $post_id );
 		$coupon->update_meta_data( 'magic_coupon_enable', isset( $_POST['magic_coupon_enable'] ) ? 'yes' : 'no' );
 		$coupon->update_meta_data( 'magic_coupon_cookie_minutes', isset( $_POST['magic_coupon_cookie_minutes'] ) ? intval( $_POST['magic_coupon_cookie_minutes'] ) : 0 );
-		$coupon->update_meta_data( 'magic_coupon_html_message', isset( $_POST['magic_coupon_html_message'] ) ? trim( stripslashes_deep( sanitize_text_field( wp_unslash( $_POST['magic_coupon_html_message'] ) ) ) ) : '' );
+		$coupon->update_meta_data( 'magic_coupon_html_message', isset( $_POST['magic_coupon_html_message'] ) ? trim( wp_kses_post( wp_unslash( $_POST['magic_coupon_html_message'] ) ) ) : '' );
 		$coupon->save();
 		// phpcs:enable
 	}
