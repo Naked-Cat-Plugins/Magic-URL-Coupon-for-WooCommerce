@@ -3,7 +3,7 @@
  * Plugin Name:          Magic URL Coupon for WooCommerce
  * Plugin URI:
  * Description:          Share WooCommerce discount links: pass a coupon code via URL, display sale prices on product pages, and auto-apply the coupon at checkout.
- * Version:              2.2
+ * Version:              2.3
  * Author:               Naked Cat Plugins (by Webdados)
  * Author URI:           https://nakedcatplugins.com
  * Text Domain:          magic-coupon
@@ -32,8 +32,31 @@ add_action(
 	}
 );
 
-// Our main class
-require_once plugin_dir_path( __FILE__ ) . '/includes/class-magic-coupon.php';
-return new Magic_Coupon();
+// Only load if WooCommerce is active. Checked on plugins_loaded, not here, since this file can
+// run before woocommerce.php's own file when plugins load in alphabetical order.
+add_action(
+	'plugins_loaded',
+	function () {
+		if ( ! class_exists( 'WooCommerce' ) ) {
+			add_action(
+				'admin_notices',
+				function () {
+					?>
+					<div class="notice notice-error is-dismissible">
+						<p>
+							<?php
+							echo wp_kses_post( __( '<strong>Magic URL Coupon for WooCommerce</strong> is installed and active but <strong>WooCommerce</strong> is not.', 'magic-coupon' ) );
+							?>
+						</p>
+					</div>
+					<?php
+				}
+			);
+			return;
+		}
+		require_once plugin_dir_path( __FILE__ ) . '/includes/class-magic-coupon.php';
+		new Magic_Coupon();
+	}
+);
 
 /* If you’re reading this you must know what you’re doing ;-) Greetings from sunny Portugal! */

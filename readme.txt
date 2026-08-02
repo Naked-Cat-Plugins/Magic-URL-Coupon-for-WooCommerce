@@ -4,7 +4,7 @@ Tags: woocommerce, coupons, promotions, marketing
 Requires at least: 5.8
 Tested up to: 7.0
 Requires PHP: 7.2
-Stable tag: 2.2
+Stable tag: 2.3
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -108,6 +108,10 @@ You can report any security bugs found in the source code of this plugin through
 1. Magic coupon settings
 
 == Changelog ==
+
+= 2.3 - 2026-08-02 =
+* [FIX] The HTML message field was saved with all HTML stripped, so it could never actually contain HTML as advertised
+* [FIX] Fatal error risk if the plugin was ever active without WooCommerce (older sites, WP-CLI force-activate)
 
 = 2.2 - 2026-04-08 =
 * [NEW] Plugin ownership transferred from [Marco Almeida | Webdados](https://profiles.wordpress.org/webdados/) to [Naked Cat Plugins](https://profiles.wordpress.org/nakedcatplugins/) on WordPress.org - No worries, we’re the same people :-)
