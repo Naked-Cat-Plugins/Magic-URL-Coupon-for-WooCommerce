@@ -31,7 +31,7 @@ Already know our other WooCommerce (premium) plugins?
 
 * [EU Guarantee Notice and GARAN Label for WordPress and WooCommerce](https://nakedcatplugins.com/product/eu-guarantee-notice-and-garan-label-for-wordpress-and-woocommerce/) - Show the mandatory EU guarantee notice and the EU GARAN label with the official European Commission artwork, and let Proof of Notice check every day that the notice is still on your site
 * [Shop as Client for WooCommerce](https://nakedcatplugins.com/product/shop-as-client-for-woocommerce-pro-add-on/) - Quickly create orders on behalf of your customers
-* [Simple Checkout Fields Manager for WooCommerce](https://nakedcatplugins.com/product/simple-custom-fields-for-woocommerce-blocks-checkout/) - Add custom fields and manage (remove, make required or optional) core fields on the new WooCommerce Block-based Checkout
+* [Simple Checkout Fields Manager for WooCommerce](https://nakedcatplugins.com/product/simple-custom-fields-for-woocommerce-blocks-checkout/) - Add custom fields and manage (remove, make required or optional) core fields on the WooCommerce Block-based Checkout
 * [Advanced Coupon Restrictions for WooCommerce](https://nakedcatplugins.com/product/advanced-coupon-restrictions-for-woocommerce/) - Create coupons for any Product Taxonomy, User details, and Order destination.
 * [Simple WooCommerce Order Approval](https://nakedcatplugins.com/product/simple-woocommerce-order-approval/) - The hassle-free solution for WooCommerce order approval before payment
 * [Taxonomy/Term and Role-based Discounts for WooCommerce](https://nakedcatplugins.com/product/taxonomy-term-and-role-based-discounts-for-woocommerce-pro-add-on/) - Easily create bulk discount rules for products based on any taxonomy terms (built-in or custom)
@@ -84,11 +84,11 @@ This will ensure the page with the discounted price is not cached at that moment
 
 Anyway, we’ve experimented a bit with the [WP-Optimize](https://wordpress.org/plugins/wp-optimize/) “Cookies which, if present, will prevent caching” setting, by entering the name of our cookie (`mcoupon` by default), and we had good results. Regular users see the cached page and the ones with the coupon set on the cookie see non-cached pages.
 
-= Is this plugin compatible with the new WooCommerce High-Performance Order Storage? =
+= Is this plugin compatible with WooCommerce High-Performance Order Storage? =
 
 Yes.
 
-= Is this plugin compatible with the new WooCommerce block-based Cart and Checkout? =
+= Is this plugin compatible with the WooCommerce block-based Cart and Checkout? =
 
 Yes.
 
