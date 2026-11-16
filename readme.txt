@@ -12,15 +12,15 @@ Share WooCommerce discount links: pass a coupon code via URL, display sale price
 
 == Description ==
 
-Want to share a WooCommerce discount link that automatically applies a coupon? Magic URL Coupon lets you embed any coupon code directly in a URL — perfect for email campaigns, affiliate links, and social media promotions.
+Want to share a WooCommerce discount link that automatically applies a coupon? Magic URL Coupon lets you embed any coupon code directly in a URL, perfect for email campaigns, affiliate links, and social media promotions.
 
 When a customer visits your store via the magic link, the coupon code is stored in a cookie for a configurable amount of time. No manual code entry needed.
 
 Pass the coupon via the `mcoupon` URL parameter (customizable via the `magic_coupon_url_parameter` filter). While the cookie is active:
 
-* Discounted prices shown upfront — eligible product pages display the post-coupon price automatically, so customers see exactly what they’ll pay before adding to cart;
-* Custom promotional message — show a personalized HTML message under the product price, anywhere on the page via hooks, or inline via the `[magic_coupon_html_message]` shortcode;
-* Coupon auto-applied at checkout — when the customer adds a product to the cart, the coupon is applied automatically, no code entry required;
+* Discounted prices shown upfront: eligible product pages display the post-coupon price automatically, so customers see exactly what they’ll pay before adding to cart;
+* Custom promotional message: show a personalized HTML message under the product price, anywhere on the page via hooks, or inline via the `[magic_coupon_html_message]` shortcode;
+* Coupon auto-applied at checkout: when the customer adds a product to the cart, the coupon is applied automatically, no code entry required;
 * The coupon remains freely usable: customers can still enter it manually at any time, and this plugin will not restrict its regular usage.
 
 Variable product support is experimental and may be moved to a premium add-on in the future.
@@ -34,13 +34,13 @@ Already know our other WooCommerce (premium) plugins?
 * [Simple Checkout Fields Manager for WooCommerce](https://nakedcatplugins.com/product/simple-custom-fields-for-woocommerce-blocks-checkout/) - Add custom fields and manage (remove, make required or optional) core fields on the new WooCommerce Block-based Checkout
 * [Advanced Coupon Restrictions for WooCommerce](https://nakedcatplugins.com/product/advanced-coupon-restrictions-for-woocommerce/) - Create coupons for any Product Taxonomy, User details, and Order destination.
 * [Simple WooCommerce Order Approval](https://nakedcatplugins.com/product/simple-woocommerce-order-approval/) - The hassle-free solution for WooCommerce order approval before payment
-* [Taxonomy/Term and Role based Discounts for WooCommerce](https://nakedcatplugins.com/product/taxonomy-term-and-role-based-discounts-for-woocommerce-pro-add-on/) - Easily create bulk discount rules for products based on any taxonomy terms (built-in or custom)
+* [Taxonomy/Term and Role-based Discounts for WooCommerce](https://nakedcatplugins.com/product/taxonomy-term-and-role-based-discounts-for-woocommerce-pro-add-on/) - Easily create bulk discount rules for products based on any taxonomy terms (built-in or custom)
 * [DPD / SEUR / Geopost Pickup and Lockers network for WooCommerce](https://nakedcatplugins.com/product/dpd-seur-geopost-pickup-and-lockers-network-for-woocommerce/) - Deliver your WooCommerce orders on the DPD and SEUR Pickup network of Parcelshops and Lockers in 21 European countries
 
 == Installation ==
 
 * Use the included automatic install feature on your WordPress admin panel and search for “Magic URL Coupon WooCommerce”;
-* On each coupon you want to activate this plugin features, you must go to the “Magic coupon” tab and check “Enable”;
+* On each coupon you want to activate this plugin's features, you must go to the “Magic coupon” tab and check “Enable”;
 
 == Frequently Asked Questions ==
 
@@ -58,7 +58,7 @@ You can also show it directly on the product description by using the `[magic_co
 
 = Is it possible to add dynamic information to the HTML message? =
 
-You bet! Use one of the following placeholders on your message:
+Yes. Use one of the following placeholders on your message:
 
 * `{product_id}` will be replaced by the Product ID;
 * `{coupon}` will be replaced by the coupon code;
@@ -66,21 +66,21 @@ You bet! Use one of the following placeholders on your message:
 * `{cookie_validity_minutes}` will be replaced by the cookie validity in minutes;
 * `{cookie_validity_hours_minutes}` will be replaced by the cookie validity in hours or minutes (in the `x hours` or `x minutes` format), depending on the validity being more or less than one hour;
 
-You can also add you own placeholders with the `magic_coupon_html_message_replace_tags` filter. See an example [here](https://gist.github.com/webdados/c6094429e1e53306d767ee0b7255f4ea).
+You can also add your own placeholders with the `magic_coupon_html_message_replace_tags` filter. See an example [here](https://gist.github.com/webdados/c6094429e1e53306d767ee0b7255f4ea).
 
-And because you can also use shortcodes on the HTML message field, you can feed the product id, coupon, the cookie expire timestamp or validity, or any other variable you set via your own placeholders as a shortcode argument, you can do whatever you want with your custom message. [Go crazy](https://gist.github.com/webdados/57682c9f7e4dad416f1ab0ec4b7476d5), or [hire us](https://www.webdados.pt/contactos/) to develop a custom solution for you.
+And because you can also use shortcodes on the HTML message field, you can feed the product id, coupon, the cookie expire timestamp or validity, or any other variable you set via your own placeholders as a shortcode argument, so you can do whatever you want with your custom message. [See an example](https://gist.github.com/webdados/57682c9f7e4dad416f1ab0ec4b7476d5), or [hire us](https://www.webdados.pt/contactos/) to develop a custom solution for you.
 
 = Can this plugin have issues with caching plugins? =
 
 Yes. The page output has to be changed to set the discounted product prices based on the user cookie. That’s incompatible with a server-side caching system.
 
-We set the following constants to prevent caching by some plugins, on the moment the customer reaches the page with a coupon code:
+We set the following constants to prevent caching by some plugins at the moment the customer reaches the page with a coupon code:
 
 * `DONOTCACHEPAGE`
 * `DONOTCACHEOBJECT`
 * `DONOTCACHEDB`
 
-This will ensure the page with the discounted price is not cached on that moment (and no other users will see a version of the page with the discount), but will not disable the cache that might already exist.
+This will ensure the page with the discounted price is not cached at that moment (and no other users will see a version of the page with the discount), but will not disable the cache that might already exist.
 
 Anyway, we’ve experimented a bit with the [WP-Optimize](https://wordpress.org/plugins/wp-optimize/) “Cookies which, if present, will prevent caching” setting, by entering the name of our cookie (`mcoupon` by default), and we had good results. Regular users see the cached page and the ones with the coupon set on the cookie see non-cached pages.
 
@@ -96,7 +96,7 @@ Yes.
 
 This is a free plugin. It’s our way of giving back to the wonderful WordPress community.
 
-There’s a support tab on the top of this page, where you can ask the community for help. We’ll try to keep an eye on the forums but we cannot promise to answer support tickets.
+There’s a support tab at the top of this page, where you can ask the community for help. We’ll try to keep an eye on the forums, but we cannot promise to answer support tickets.
 
 If you reach us by email or any other direct contact method, we’ll assume you need premium, paid-for support.
 
