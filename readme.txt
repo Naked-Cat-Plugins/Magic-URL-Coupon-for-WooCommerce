@@ -102,7 +102,7 @@ If you reach us by email or any other direct contact method, we’ll assume you 
 
 = Where do I report security vulnerabilities found in this plugin? =  
  
-You can report any security bugs found in the source code of this plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/magic-coupon). The Patchstack team will assist you with verification, CVE assignment and take care of notifying the developers of this plugin.
+You can report any security bugs found in the source code of this plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/9e5fbb50-ff81-4573-a31d-bc15e4a6d3d1). The Patchstack team will assist you with verification, CVE assignment and take care of notifying the developers of this plugin.
 
 == Screenshots ==
 
