@@ -52,7 +52,7 @@ Yes. Use the `magic_coupon_url_parameter` filter.
 
 Sure you can. Use the `magic_coupon_html_message_action_hook` filter to change the hook and the `magic_coupon_html_message_action_priority` filter to change the priority.
 
-If you don’t know what we’re talking about, you should probably stop now and [hire us](https://www.webdados.pt/contactos/) to do it for you :-)
+If you don’t know what we’re talking about, you should probably stop now and [hire us](https://nakedcatplugins.com/product/custom-development/) to do it for you :-)
 
 You can also show it directly on the product description by using the `[magic_coupon_html_message]` shortcode.
 
@@ -68,7 +68,7 @@ Yes. Use one of the following placeholders on your message:
 
 You can also add your own placeholders with the `magic_coupon_html_message_replace_tags` filter. See an example [here](https://gist.github.com/webdados/c6094429e1e53306d767ee0b7255f4ea).
 
-And because you can also use shortcodes on the HTML message field, you can feed the product id, coupon, the cookie expire timestamp or validity, or any other variable you set via your own placeholders as a shortcode argument, so you can do whatever you want with your custom message. [See an example](https://gist.github.com/webdados/57682c9f7e4dad416f1ab0ec4b7476d5), or [hire us](https://www.webdados.pt/contactos/) to develop a custom solution for you.
+And because you can also use shortcodes on the HTML message field, you can feed the product id, coupon, the cookie expire timestamp or validity, or any other variable you set via your own placeholders as a shortcode argument, so you can do whatever you want with your custom message. [See an example](https://gist.github.com/webdados/57682c9f7e4dad416f1ab0ec4b7476d5), or [hire us](https://nakedcatplugins.com/product/custom-development/) to develop a custom solution for you.
 
 = Can this plugin have issues with caching plugins? =
 
